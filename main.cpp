@@ -148,7 +148,7 @@ void start_schedule()
                 Medicine_groups[j].drink_time += Medicine_groups[j].drink_duration;
                 for (int k = 0; k < Medicine_groups[j].medicine_group.size(); ++k)
                 {
-                    cout << i / 60 << ":" << i % 60 << " task medicine " << Medicine_groups[j].medicine_group[k].ID /*<< " before " << Medicine_groups[j].medicine_group[k].short_turn_time << " after " << Medicine_groups[j].medicine_group[k].long_turn_time*/;
+                    cout << i / 60 << ":" << i % 60 << " task medicine " << Medicine_groups[j].medicine_group[k].ID << " before " << Medicine_groups[j].medicine_group[k].short_turn_time << " after " << Medicine_groups[j].medicine_group[k].long_turn_time;
 
                     if (i + Random_table_vector[take_medicine_time] < Medicine_groups[j].medicine_group[k].short_turn_time || i + Random_table_vector[take_medicine_time] > Medicine_groups[j].medicine_group[k].long_turn_time)
                     {
@@ -162,7 +162,7 @@ void start_schedule()
                     }
 
                     Medicine_groups[j].medicine_group[k].short_turn_time = i + Medicine_groups[j].medicine_group[k].turn_time;
-                    Medicine_groups[j].medicine_group[k].long_turn_time = i + Medicine_groups[j].medicine_group[k].short_turn_time + Medicine_groups[j].medicine_group[k].time_interval;
+                    Medicine_groups[j].medicine_group[k].long_turn_time = i + Medicine_groups[j].medicine_group[k].turn_time + Medicine_groups[j].medicine_group[k].time_interval;
                 }
 
                 take_medicine_flag = 1;

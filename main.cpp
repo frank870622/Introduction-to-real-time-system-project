@@ -22,7 +22,7 @@ int main()
         hyper_period = LCM(hyper_period, Medicine_groups[i].drink_time);
     }
     //printf("hyper_period %d\n", hyper_period);
-
+    hyper_period = LCM(hyper_period, 60*24);
     start_schedule();
 
     return 0;
@@ -30,7 +30,7 @@ int main()
 
 void input_medicine_information()
 {
-    freopen("medicine_input.txt", "r", stdin); //set a input.txt as the stdin
+    freopen("Testcase4.txt", "r", stdin); //set a input.txt as the stdin
     cin >> medicine_num;                       //read medicine number
 
     for (int i = 0; i < medicine_num; ++i)
@@ -56,7 +56,7 @@ void input_medicine_information()
 void input_random_number_table()
 {
     //freopen("random_input.txt", "r", stdin); //set a input.txt as the stdin
-    ifstream iFile("random_input.txt"); //read input file
+    ifstream iFile("RandomTable.txt"); //read input file
 
     while (true)
     {
